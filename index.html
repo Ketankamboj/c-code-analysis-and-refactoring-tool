@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Code Analyzer - Static Analysis & Refactoring</title>
+    <link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 C Code Static Analyzer</h1>
+            <p>Paste your C code below and click Analyze to detect bugs and get refactored code</p>
+        </header>
+
+        <div class="main-content">
+            <div class="panel">
+                <div class="panel-header">
+                    <span class="label">📝 Input Code</span>
+                </div>
+                <div class="panel-content">
+                    <div class="code-editor">
+                        <div class="line-numbers" id="lineNumbers"></div>
+                        <textarea id="codeInput" placeholder="Paste your C code here..." oninput="updateLineNumbers()" onscroll="syncScroll()"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <span class="label">✨ Refactored Code</span>
+                </div>
+                <div class="panel-content">
+                    <div id="refactoredOutput" class="output-area refactored-code">
+                        <span style="color: #808080;">Refactored code will appear here...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="btn btn-analyze" onclick="analyzeCode()">🔍 Analyze Code</button>
+            <button class="btn btn-change" onclick="changeCode()">✨ Change Code</button>
+        </div>
+
+        <div class="results-section">
+            <div class="panel">
+                <div class="panel-header">
+                    <span class="label">🐛 Bug Report</span>
+                </div>
+                <div id="summaryBar" class="summary-bar" style="display: none;"></div>
+                <div class="panel-content">
+                    <div id="bugReport" class="output-area">
+                        <span style="color: #808080;">Bug report will appear here...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="analyzer.js?v=34"></script>
+</body>
+</html>
